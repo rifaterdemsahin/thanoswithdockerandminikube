@@ -1,0 +1,2 @@
+helm install my-release oci://registry-1.docker.io/bitnamicharts/thanos --values .\values.yaml --namespace monitoring-testing-october24
+Error: INSTALLATION FAILED: Get "https://registry-1.docker.io/v2/bitnamicharts/thanos/tags/list": net/http: TLS handshake timeout
