@@ -67,7 +67,7 @@ To test the Thanos deployment, you can use the following steps:
 1. **Run basic tests:**
 
     ```sh
-    kubectl get all -l app.kubernetes.io/name=thanos
+    kubectl get all -n monitoring-testing-october24
     ```
 
 2. **Check logs for any errors:**
