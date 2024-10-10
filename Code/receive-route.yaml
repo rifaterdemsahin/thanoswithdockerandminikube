@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: receive
+  namespace: monitoring-testing-october24
+spec:
+  host: receive.fuzzy-broccoli-vwrx9j76wqfww5.github.dev
+  port:
+    targetPort: remote
+  tls:
+    termination: edge
+  to:
+    kind: Service
+    name: receive
+    weight: 100
+  wildcardPolicy: None
