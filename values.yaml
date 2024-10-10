@@ -1,1 +1,138 @@
-xxx
+# Default values for Thanos.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+global:
+  imageRegistry: ""
+  imagePullSecrets: []
+  storageClass: ""
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  name: ""
+
+rbac:
+  create: true
+
+podSecurityPolicy:
+  enabled: false
+
+securityContext:
+  enabled: true
+  fsGroup: 1001
+  runAsUser: 1001
+
+service:
+  type: ClusterIP
+  port: 9090
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+query:
+  replicaCount: 1
+  image:
+    registry: docker.io
+    repository: bitnami/thanos
+    tag: 0.23.1
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 9090
+  ingress:
+    enabled: false
+    annotations: {}
+    hosts:
+      - host: query.example.local
+        paths: []
+    tls: []
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+storegateway:
+  replicaCount: 1
+  image:
+    registry: docker.io
+    repository: bitnami/thanos
+    tag: 0.23.1
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 10901
+  ingress:
+    enabled: false
+    annotations: {}
+    hosts:
+      - host: storegateway.example.local
+        paths: []
+    tls: []
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+compactor:
+  replicaCount: 1
+  image:
+    registry: docker.io
+    repository: bitnami/thanos
+    tag: 0.23.1
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 10902
+  ingress:
+    enabled: false
+    annotations: {}
+    hosts:
+      - host: compactor.example.local
+        paths: []
+    tls: []
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+ruler:
+  replicaCount: 1
+  image:
+    registry: docker.io
+    repository: bitnami/thanos
+    tag: 0.23.1
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 10903
+  ingress:
+    enabled: false
+    annotations: {}
+    hosts:
+      - host: ruler.example.local
+        paths: []
+    tls: []
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
