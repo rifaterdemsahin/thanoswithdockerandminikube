@@ -34,7 +34,8 @@ Before you begin, ensure you have met the following requirements:
 2. **Install Thanos using Bitnami Helm Chart:**
 
     ```sh
-    helm install my-thanos bitnami/thanos
+    kubectl create namespace monitoring-testing-october24
+    helm install my-release oci://registry-1.docker.io/bitnamicharts/thanos --values .\values.yaml --namespace monitoring-testing-october24
     ```
 
 ## Usage
