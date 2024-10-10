@@ -56,7 +56,9 @@ If you want labels add the labels
     kubectl port-forward svc/my-release-thanos-query 9090:9090 -n monitoring-testing-october24
     ```
 
-    Then open your browser and go to `http://localhost:9090`.
+    Then open your browser and go to loadbalances codeppaces url in the ports
+    example : https://fuzzy-broccoli-vwrx9j76wqfww5-9090.app.github.dev/stores
+    Ingress and service magic
 
 ## Testing
 
