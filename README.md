@@ -36,7 +36,7 @@ Before you begin, ensure you have met the following requirements:
     ```sh
         helm install my-release oci://registry-1.docker.io/bitnamicharts/thanos --values .\values.yaml --namespace monitoring-testing-october24
         helm uninstall my-release 
-        kubectl get pods
+        kubectl get pods -n monitoring-testing-october24
     ```
 
 ## Usage
