@@ -1,10 +1,10 @@
-apiVersion: route.openshift.io/v1
+apiVersion: v1
 kind: Route
 metadata:
-  name: front
+  name: monitoring-testing-october24
   namespace: monitoring-testing-october24
 spec:
-  host: front-ng-observability-cloud.fuzzy-broccoli-vwrx9j76wqfww5.github.dev
+  host: front.fuzzy-broccoli-vwrx9j76wqfww5.github.dev
   port:
     targetPort: http
   tls:

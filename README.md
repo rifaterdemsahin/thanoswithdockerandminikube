@@ -78,9 +78,10 @@ To test the Thanos deployment, you can use the following steps:
 
 . REceive router
 . Front end route to get installed
-
-   kubectl create -f .\frontend-route.yaml -n monitoring-testing-october24
-   kubectl create -f .\receive-route.yaml -n monitoring-testing-october24
+cd /workspaces/thanoswithdocker/Code
+   kubectl create -f frontend-route.yaml -n monitoring-testing-october24
+   kubectl create -f receive-route.yaml -n monitoring-testing-october24
+   kubectl create -f receive-config.yaml -n monitoring-testing-october24
 
 . Install Certificates
 
