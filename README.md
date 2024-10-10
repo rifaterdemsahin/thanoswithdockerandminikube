@@ -35,7 +35,6 @@ Before you begin, ensure you have met the following requirements:
 
     ```sh
     helm install my-thanos bitnami/thanos
-    helm upgrade my-release oci://registry-1.docker.io/bitnamicharts/thanos -n monitoring-testing-october24 -f ./values.yaml
     ```
 
 ## Usage
