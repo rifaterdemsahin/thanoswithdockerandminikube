@@ -42,17 +42,18 @@ Before you begin, ensure you have met the following requirements:
 ## Usage
 
 Once Thanos is installed, you can interact with it using `kubectl` and Helm commands. For example:
-
+If you want labels add the labels
 - **Check the status of the Thanos pods:**
 
     ```sh
-    kubectl get pods -l app.kubernetes.io/name=thanos
+    kubectl get pods -n monitoring-testing-october24
     ```
 
 - **Access Thanos Query UI:**
 
     ```sh
-    kubectl port-forward svc/my-thanos-query 9090:9090
+    kubectl get svc -n monitoring-testing-october24
+    kubectl port-forward svc/my-release-thanos-query 9090:9090 -n monitoring-testing-october24
     ```
 
     Then open your browser and go to `http://localhost:9090`.
