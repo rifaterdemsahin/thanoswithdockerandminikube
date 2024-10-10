@@ -1,4 +1,3 @@
 # thanoswithdocker
 Thanos Poc With Docker
-
-.\oc.exe create namespace monitoring-testing-october24
+docker run --name thanos bitnami/thanos:latest
