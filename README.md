@@ -73,12 +73,12 @@ To test the Thanos deployment, you can use the following steps:
 2. **Check logs for any errors:**
 
     ```sh
-    kubectl logs -l app.kubernetes.io/name=thanos
+    kubectl logs -n monitoring-testing-october24
     ```
 
-3. **Run custom tests:**
-
-    You can create custom scripts or use testing frameworks to validate the functionality of Thanos.
+. REceive router
+. Front end route to get installed
+. Install Certificates
 
 ## Contributing
 

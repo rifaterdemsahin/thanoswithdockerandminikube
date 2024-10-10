@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: receiver-config
+ namespace: monitoring-testing-october24
+data:
+ receiver.yaml:
+  receive:
+   hashrings:
+    - hashring: 0
+     endpoints:
+      - receiver-0:10901
+      - receiver-1:10901
+   tenant-label-name: "tenant_id"
