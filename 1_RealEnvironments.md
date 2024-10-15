@@ -44,9 +44,11 @@ Update Complete. ⎈Happy Helming!⎈
 2. **Install Thanos using Bitnami Helm Chart:**
 
     ```sh
-        helm install my-release oci://registry-1.docker.io/bitnamicharts/thanos --values .\values.yaml --namespace monitoring-testing-october24
-        helm uninstall my-release 
-        kubectl get pods -n monitoring-testing-october24
+         Cd Code
+         minikube start
+         helm install my-release oci://registry-1.docker.io/bitnamicharts/thanos --values 1_values.yaml --namespace monitoring-testing-october24
+         helm uninstall my-release 
+         kubectl get pods -n monitoring-testing-october24
     ```
 
 ## Usage
