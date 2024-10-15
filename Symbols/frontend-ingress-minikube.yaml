@@ -1,17 +1,21 @@
 apiVersion: networking.k8s.io/v1
-kind: Route
+kind: Ingress
 metadata:
   name: monitoring-testing-october24
   namespace: monitoring-testing-october24
 spec:
-  host: front.fuzzy-broccoli-vwrx9j76wqfww5.github.dev
-  port:
-    targetPort: http
+  rules:
+  - host: front.literate-cod-rw6jq5vp4rfpr47.github.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: query-frontend
+            port:
+              name: http
   tls:
-    insecureEdgeTerminationPolicy: Redirect
-    termination: edge
-  to:
-    kind: Service
-    name: query-frontend
-    weight: 100
-  wildcardPolicy: None
+  - hosts:
+    - front.literate-cod-rw6jq5vp4rfpr47.github.dev
+    secretName: tls-secret

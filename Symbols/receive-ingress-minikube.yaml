@@ -1,16 +1,21 @@
 apiVersion: networking.k8s.io/v1
-kind: Route
+kind: Ingress
 metadata:
   name: receive
   namespace: monitoring-testing-october24
 spec:
-  host: receive.fuzzy-broccoli-vwrx9j76wqfww5.github.dev
-  port:
-    targetPort: remote
+  rules:
+  - host: receive.fliterate-cod-rw6jq5vp4rfpr47.github.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: receive
+            port:
+              name: remote
   tls:
-    termination: edge
-  to:
-    kind: Service
-    name: receive
-    weight: 100
-  wildcardPolicy: None
+  - hosts:
+    - receive.literate-cod-rw6jq5vp4rfpr47.github.dev
+    secretName: receive-tls
