@@ -122,9 +122,26 @@ If you want labels add the labels
     kubectl port-forward svc/my-release-thanos-query 9090:9090 -n monitoring-testing-october24
     ```
 
+    ## Output
+
+    ```sh
+    @rifaterdemsahin ➜ /workspaces/thanoswithdockerandminikube (main) $ kubectl get svc -n monitoring-testing-october24
+    NAME                               TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)     AGE
+    my-release-thanos-query            ClusterIP   10.105.173.208   <none>        9090/TCP    14m
+    my-release-thanos-query-frontend   ClusterIP   10.108.97.142    <none>        9090/TCP    14m
+    my-release-thanos-query-grpc       ClusterIP   10.110.250.28    <none>        10901/TCP   14m
+    @rifaterdemsahin ➜ /workspaces/thanoswithdockerandminikube (main) $ kubectl port-forward svc/my-release-thanos-query 9090:9090 -n monitoring-testing-october24
+    Forwarding from 127.0.0.1:9090 -> 10902
+    Forwarding from [::1]:9090 -> 10902
+    ```
+
+    ## Browse
+    
+    ```
     Then open your browser and go to loadbalances codeppaces url in the ports
     example : https://fuzzy-broccoli-vwrx9j76wqfww5-9090.app.github.dev/stores
     Ingress and service magic
+    ```
 
 ## Testing
 
