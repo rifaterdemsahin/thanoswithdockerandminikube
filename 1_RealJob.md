@@ -1,102 +1,43 @@
-Sure! Here's a sample `README.md` file for a project that tests Thanos and a Helm chart using Bitnami Helm charts:
+# **Objectives and Key Results (OKRs) for Thanos and Helm Chart Testing Project 🚀**
 
-```markdown
-# Thanos and Helm Chart Testing Project
+## **Objective 1: Successfully Deploy Thanos using Bitnami Helm Charts**  
+This objective focuses on achieving a smooth, repeatable deployment of Thanos within Kubernetes using Helm.
 
-This project is designed to test the deployment and functionality of Thanos using Bitnami Helm charts.
+### **Key Results**:
+- KR1: Complete Thanos installation in the Kubernetes cluster in under 30 minutes.
+- KR2: Validate the installation by ensuring all Thanos components (query, store, receive, etc.) are running and accessible via `kubectl`.
+- KR3: Achieve a 100% success rate in deployment with no Helm chart-related errors across at least 3 different Kubernetes environments (e.g., Minikube, OpenShift, and Codespaces).
 
-## Table of Contents
+---
 
-- Prerequisites
-- Installation
-- Usage
-- Testing
-- Contributing
-- License
+## **Objective 2: Ensure Stability and Performance of Thanos in Monitoring Setup**  
+This objective ensures Thanos is fully integrated and functioning well within the monitoring-testing namespace.
 
-## Prerequisites
+### **Key Results**:
+- KR1: Configure Thanos to be fully operational with less than 2% downtime during testing.
+- KR2: Run a minimum of 10 basic and advanced tests (using `kubectl logs`, `get pods`, etc.) without any critical errors.
+- KR3: Monitor and analyze logs using Loki, ensuring less than 10 error logs per day in the `monitoring-testing-october24` namespace.
 
-Before you begin, ensure you have met the following requirements:
+---
 
-- Kubernetes cluster (v1.19+)
-- Helm (v3.0+)
-- kubectl (v1.19+)
+## **Objective 3: Validate Load Balancer & Port Forwarding**  
+This objective focuses on ensuring smooth user interaction through the UI and testing the load balancer and forwarding configuration.
 
-## Installation
+### **Key Results**:
+- KR1: Successfully access Thanos Query UI through port forwarding on at least 3 different environments (Codespaces, Minikube, OpenShift).
+- KR2: Validate the load balancer setup and ensure it forwards traffic correctly to Thanos Query with a response time of < 300ms.
+- KR3: Test the route configurations and validate frontend access on OpenShift and Minikube environments.
 
-1. **Add Bitnami Helm Repository:**
+---
 
-    ```sh
-    helm repo add bitnami https://charts.bitnami.com/bitnami
-    helm repo update
-    ```
+## **Objective 4: Implement Security and Certificate Management**  
+This objective ensures that the deployed Thanos instance is secure with proper certificate management.
 
-2. **Install Thanos using Bitnami Helm Chart:**
+### **Key Results**:
+- KR1: Install certificates for secure access to Thanos services in all testing environments (Minikube, OpenShift, Codespaces).
+- KR2: Ensure that all services are accessible over HTTPS with valid certificates, verified using `kubectl get svc`.
+- KR3: Conduct security tests and confirm no critical vulnerabilities in the Thanos deployment within the first two weeks post-deployment.
 
-    ```sh
-        helm install my-release oci://registry-1.docker.io/bitnamicharts/thanos --values .\values.yaml --namespace monitoring-testing-october24
-        helm uninstall my-release 
-        kubectl get pods -n monitoring-testing-october24
-    ```
+---
 
-## Usage
-
-Once Thanos is installed, you can interact with it using `kubectl` and Helm commands. For example:
-If you want labels add the labels
-- **Check the status of the Thanos pods:**
-
-    ```sh
-    kubectl get pods -n monitoring-testing-october24
-    ```
-
-- **Access Thanos Query UI:**
-
-    ```sh
-    kubectl get svc -n monitoring-testing-october24
-    kubectl port-forward svc/my-release-thanos-query 9090:9090 -n monitoring-testing-october24
-    ```
-
-    Then open your browser and go to loadbalances codeppaces url in the ports
-    example : https://fuzzy-broccoli-vwrx9j76wqfww5-9090.app.github.dev/stores
-    Ingress and service magic
-
-## Testing
-
-To test the Thanos deployment, you can use the following steps:
-
-1. **Run basic tests:**
-
-    ```sh
-    kubectl get all -n monitoring-testing-october24
-    ```
-
-2. **Check logs for any errors:**
-
-    ```sh
-    kubectl logs -n monitoring-testing-october24
-    ```
-
-. REceive router
-. Front end route to get installed
-cd /workspaces/thanoswithdocker/Code
-
-Openshift uses the route
-   kubectl create -f frontend-route.yaml -n monitoring-testing-october24
-   kubectl create -f receive-route.yaml -n monitoring-testing-october24
-
-Minikube uses > port forwarding 
-   kubectl create -f receive-config.yaml -n monitoring-testing-october24
-
-. Install Certificates
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-```
-
-Feel free to customize this template to better fit your project's specific needs. If you have any other requirements or need further assistance, just let me know!
-
+These OKRs provide clear, measurable outcomes to drive the success of the project while ensuring structured progress at each step!
