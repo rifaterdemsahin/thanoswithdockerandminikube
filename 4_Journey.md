@@ -178,7 +178,7 @@ To test the Thanos deployment, you can use the following steps:
     2. **Check logs for any errors:**
 
     ```sh
-    kubectl logs -n monitoring-testing-october24
+    kubectl logs -p my-release-thanos-query-6cf69d9499-zdvq9 -n monitoring-testing-october24
     ```
 
 . REceive router
