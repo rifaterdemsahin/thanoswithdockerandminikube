@@ -1,5 +1,5 @@
 
-# Thanos and Helm Chart Testing Project
+# Enviroment : Minikube Thanos and Helm Chart Testing Project
 
 This project is designed to test the deployment and functionality of Thanos using Bitnami Helm charts.
 
@@ -97,4 +97,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ```
 
 Feel free to customize this template to better fit your project's specific needs. If you have any other requirements or need further assistance, just let me know!
+
+-------------------------------------------------------------------------------------------
 
