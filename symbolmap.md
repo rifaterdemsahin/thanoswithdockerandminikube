@@ -13,7 +13,7 @@ graph TD
     end
 
     subgraph Object Storage
-        E --> H[Storage Bucket (S3/GCS)]
+        E --> H[Storage Bucket S3]
         G --> H
     end
 
