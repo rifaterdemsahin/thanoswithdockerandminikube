@@ -1,7 +1,7 @@
 # Practical updates 
 
 ```
-git pull; git add . && git commit -m "Refine task priorities in kanban board" && git push;clear
+git pull; git add . && git commit -m "Refined" && git push;clear
 ```
 
 # 🚀 Practical Commits Guide
