@@ -152,8 +152,30 @@ To test the Thanos deployment, you can use the following steps:
     ```sh
     kubectl get all -n monitoring-testing-october24
     ```
+    ## Output
 
-2. **Check logs for any errors:**
+    ```sh
+    @rifaterdemsahin ➜ /workspaces/thanoswithdockerandminikube (main) $ kubectl get all -n monitoring-testing-october24
+    NAME                                                    READY   STATUS    RESTARTS   AGE
+    pod/my-release-thanos-query-6cf69d9499-zdvq9            1/1     Running   0          22m
+    pod/my-release-thanos-query-frontend-55c47f5b95-9txh5   1/1     Running   0          22m
+
+    NAME                                       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)     AGE
+    service/my-release-thanos-query            ClusterIP   10.105.173.208   <none>        9090/TCP    22m
+    service/my-release-thanos-query-frontend   ClusterIP   10.108.97.142    <none>        9090/TCP    22m
+    service/my-release-thanos-query-grpc       ClusterIP   10.110.250.28    <none>        10901/TCP   22m
+
+    NAME                                               READY   UP-TO-DATE   AVAILABLE   AGE
+    deployment.apps/my-release-thanos-query            1/1     1            1           22m
+    deployment.apps/my-release-thanos-query-frontend   1/1     1            1           22m
+
+    NAME                                                          DESIRED   CURRENT   READY   AGE
+    replicaset.apps/my-release-thanos-query-6cf69d9499            1         1         1       22m
+    replicaset.apps/my-release-thanos-query-frontend-55c47f5b95   1         1         1       22m
+    @rifaterdemsahin ➜ /workspaces/thanoswithdockerandminikube (main) $ 
+    ```
+
+    2. **Check logs for any errors:**
 
     ```sh
     kubectl logs -n monitoring-testing-october24
