@@ -1,5 +1,7 @@
 
-# Enviroment : Minikube Thanos and Helm Chart Testing Project
+# Enviroment : Minikube, CodeSpaces,Bash
+
+Thanos and Helm Chart Testing Project
 
 This project is designed to test the deployment and functionality of Thanos using Bitnami Helm charts.
 
@@ -27,6 +29,16 @@ Before you begin, ensure you have met the following requirements:
     ```sh
     helm repo add bitnami https://charts.bitnami.com/bitnami
     helm repo update
+    ```
+
+    ```
+@rifaterdemsahin ➜ /workspaces/thanoswithdockerandminikube (main) $ helm repo add bitnami https://charts.bitnami.com/bitnami
+"bitnami" has been added to your repositories
+@rifaterdemsahin ➜ /workspaces/thanoswithdockerandminikube (main) $ helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "bitnami" chart repository
+Update Complete. ⎈Happy Helming!⎈
+@rifaterdemsahin ➜ /workspaces/thanoswithdockerandminikube (main) $ 
     ```
 
 2. **Install Thanos using Bitnami Helm Chart:**
